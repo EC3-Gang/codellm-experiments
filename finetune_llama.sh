@@ -1,0 +1,20 @@
+python -m EasyLM.models.llama.llama_train \
+    --train_dataset.text_processor.fields='content' \
+    --train_dataset.type='huggingface' \
+    --train_dataset.huggingface_dataset.path='codeparrot/codeparrot-clean' \
+    --train_dataset.huggingface_dataset.batch_size=2 \
+    --mesh_dim='1,-1,1' \
+    --load_llama_config='3b' \
+    --load_checkpoint='params::/home/dshi/EasyLM/models/open_llama_3b_easylm/open_llama_3b_easylm' \
+    --save_model_freq='1000' \
+    --tokenizer.vocab_file='/home/dshi/EasyLM/models/open_llama_3b_easylm/tokenizer.model' \
+    --logger.online='True' \
+    --checkpointer.float_dtype='fp32' \
+    --logger.output_dir='/mnt/disks/persist/checkpoints' \
+    --total_steps='68000' \
+    --logger.project='openllama-finetune-code' \
+    --logger.wandb_dir='/mnt/disks/persist/logs' \
+    --optimizer.type=adamw \
+    --optimizer.adamw_optimizer.lr=1e-4 \
+    --optimizer.adamw_optimizer.init_lr=6e-5 \
+    --optimizer.adamw_optimizer.lr_warmup_steps='1000' 
