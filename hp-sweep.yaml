@@ -131,9 +131,9 @@ parameters:
       - openllama-finetune-code
     distribution: categorical
   total_steps:
-    max: 150000
-    min: 50000
-    distribution: int_uniform
+    values:
+      - 500
+    distribution: categorical
 
 
 command:
