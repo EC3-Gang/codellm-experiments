@@ -142,3 +142,9 @@ parameters:
     max: 150000
     min: 50000
     distribution: int_uniform
+
+
+command:
+  - /usr/bin/python
+  - ${program}
+  - ${args}
