@@ -4,7 +4,7 @@ metric:
   goal: minimize
   name: loss
 parameters:
-  adamw_optimizer.multiply_by_parameter_scale:
+  optimizer.adamw_optimizer.multiply_by_parameter_scale:
     values:
       - "true"
       - "false"
@@ -27,7 +27,7 @@ parameters:
       - "true"
       - "false"
     distribution: categorical
-  adamw_optimizer.lr_warmup_steps:
+  optimizer.adamw_optimizer.lr_warmup_steps:
     max: 2000
     min: 500
     distribution: int_uniform
@@ -35,7 +35,7 @@ parameters:
     max: 16
     min: 4
     distribution: int_uniform
-  adamw_optimizer.lr_decay_steps:
+  optimizer.adamw_optimizer.lr_decay_steps:
     max: 1000000
     min: 250000
     distribution: int_uniform
@@ -44,16 +44,16 @@ parameters:
       - "true"
       - "false"
     distribution: categorical
-  adamw_optimizer.clip_gradient:
+  optimizer.adamw_optimizer.clip_gradient:
     max: 2
     min: 1
     distribution: int_uniform
-  adamw_optimizer.bf16_momentum:
+  optimizer.adamw_optimizer.bf16_momentum:
     values:
       - "true"
       - "false"
     distribution: categorical
-  adamw_optimizer.weight_decay:
+  optimizer.adamw_optimizer.weight_decay:
     max: 0.0002
     min: 0.00005
     distribution: uniform
@@ -69,11 +69,11 @@ parameters:
     values:
       - fp32
     distribution: categorical
-  adamw_optimizer.init_lr:
+  optimizer.adamw_optimizer.init_lr:
     max: 0.00012
     min: 0.00003
     distribution: uniform
-  adamw_optimizer.end_lr:
+  optimizer.adamw_optimizer.end_lr:
     max: 0.002
     min: 0.0005
     distribution: uniform
@@ -106,15 +106,15 @@ parameters:
     values:
       - ""
     distribution: categorical
-  adamw_optimizer.lr:
+  optimizer.adamw_optimizer.lr:
     max: 0.0002
     min: 0.000005
     distribution: uniform
-  adamw_optimizer.b2:
+  optimizer.adamw_optimizer.b2:
     max: 1.9
     min: 0.475
     distribution: uniform
-  adamw_optimizer.b1:
+  optimizer.adamw_optimizer.b1:
     max: 1.8
     min: 0.45
     distribution: uniform
