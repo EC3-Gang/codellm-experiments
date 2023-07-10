@@ -31,7 +31,7 @@ parameters:
     max: 2000
     min: 500
     distribution: int_uniform
-  huggingface_dataset.batch_size:
+  train_dataset.huggingface_dataset.batch_size:
     max: 16
     min: 4
     distribution: int_uniform
@@ -39,7 +39,7 @@ parameters:
     max: 1000000
     min: 250000
     distribution: int_uniform
-  huggingface_dataset.streaming:
+  train_dataset.huggingface_dataset.streaming:
     values:
       - "true"
       - "false"
@@ -57,11 +57,11 @@ parameters:
     max: 0.0002
     min: 0.00005
     distribution: uniform
-  huggingface_dataset.split:
+  train_dataset.huggingface_dataset.split:
     values:
       - train
     distribution: categorical
-  huggingface_dataset.path:
+  train_dataset.huggingface_dataset.path:
     values:
       - codeparrot/codeparrot-clean
     distribution: categorical
