@@ -35,7 +35,6 @@ FLAGS, FLAGS_DEF = mlxu.define_flags_with_default(
     add_bos_token=True,
     load_llama_config='',
     load_checkpoint='',
-    share='True',
     tokenizer=LLaMAConfig.get_tokenizer_config(),
     lm_server=LMServer.get_default_config(),
     jax_distributed=JaxDistributedConfig.get_default_config(),
