@@ -1,4 +1,4 @@
-program: -m EasyLM.models.llama.llama_train
+program: -mEasyLM.models.llama.llama_train
 method: bayes
 metric:
   goal: minimize
