@@ -114,6 +114,10 @@ parameters:
     values:
       - /mnt/disks/persist/checkpoints
     distribution: categorical
+  logger.online:
+    values:
+      - "true"
+    distribution: categorical
   load_llama_config:
     values:
       - 3b
