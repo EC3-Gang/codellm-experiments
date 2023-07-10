@@ -18,10 +18,6 @@ parameters:
     max: 2
     min: 1
     distribution: int_uniform
-  text_processor.subfield_separator:
-    values:
-      - " "
-    distribution: categorical
   checkpointer.save_optimizer_state:
     values:
       - "true"
@@ -77,14 +73,6 @@ parameters:
     max: 0.002
     min: 0.0005
     distribution: uniform
-  text_processor.fields:
-    values:
-      - ""
-    distribution: categorical
-  llama.remat_attention:
-    values:
-      - ""
-    distribution: categorical
   tokenizer.vocab_file:
     values:
       - /home/dshi/EasyLM/models/open_llama_3b_easylm/tokenizer.model
