@@ -1,5 +1,5 @@
 program: EasyLM/models/llama/llama_train.py
-method: grid
+method: bayes
 metric:
   goal: minimize
   name: loss
