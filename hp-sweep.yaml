@@ -1,0 +1,144 @@
+program: train.py
+method: bayes
+metric:
+  goal: minimize
+  name: loss
+parameters:
+  adamw_optimizer.multiply_by_parameter_scale:
+    values:
+      - "true"
+      - "false"
+    distribution: categorical
+  jax_distributed.initialize_jax_distributed:
+    values:
+      - "true"
+      - "false"
+    distribution: categorical
+  optimizer.accumulate_gradient_steps:
+    max: 2
+    min: 1
+    distribution: int_uniform
+  text_processor.subfield_separator:
+    values:
+      - " "
+    distribution: categorical
+  checkpointer.save_optimizer_state:
+    values:
+      - "true"
+      - "false"
+    distribution: categorical
+  adamw_optimizer.lr_warmup_steps:
+    max: 2000
+    min: 500
+    distribution: int_uniform
+  huggingface_dataset.batch_size:
+    max: 16
+    min: 4
+    distribution: int_uniform
+  adamw_optimizer.lr_decay_steps:
+    max: 1000000
+    min: 250000
+    distribution: int_uniform
+  huggingface_dataset.streaming:
+    values:
+      - "true"
+      - "false"
+    distribution: categorical
+  adamw_optimizer.clip_gradient:
+    max: 2
+    min: 1
+    distribution: int_uniform
+  adamw_optimizer.bf16_momentum:
+    values:
+      - "true"
+      - "false"
+    distribution: categorical
+  adamw_optimizer.weight_decay:
+    max: 0.0002
+    min: 0.00005
+    distribution: uniform
+  huggingface_dataset.split:
+    values:
+      - train
+    distribution: categorical
+  huggingface_dataset.path:
+    values:
+      - codeparrot/codeparrot-clean
+    distribution: categorical
+  checkpointer.float_dtype:
+    values:
+      - fp32
+    distribution: categorical
+  adamw_optimizer.init_lr:
+    max: 0.00012
+    min: 0.00003
+    distribution: uniform
+  adamw_optimizer.end_lr:
+    max: 0.002
+    min: 0.0005
+    distribution: uniform
+  text_processor.fields:
+    values:
+      - ""
+    distribution: categorical
+  llama.remat_attention:
+    values:
+      - ""
+    distribution: categorical
+  tokenizer.vocab_file:
+    values:
+      - /home/dshi/EasyLM/models/open_llama_3b_easylm/tokenizer.model
+    distribution: categorical
+  update_llama_config:
+    values:
+      - ""
+    distribution: categorical
+  logger.prefix_to_id:
+    values:
+      - "true"
+      - "false"
+    distribution: categorical
+  train_dataset.type:
+    values:
+      - huggingface
+    distribution: categorical
+  load_dataset_state:
+    values:
+      - ""
+    distribution: categorical
+  adamw_optimizer.lr:
+    max: 0.0002
+    min: 0.000005
+    distribution: uniform
+  adamw_optimizer.b2:
+    max: 1.9
+    min: 0.475
+    distribution: uniform
+  adamw_optimizer.b1:
+    max: 1.8
+    min: 0.45
+    distribution: uniform
+  logger.output_dir:
+    values:
+      - /mnt/disks/persist/checkpoints
+    distribution: categorical
+  load_llama_config:
+    values:
+      - 3b
+    distribution: categorical
+  load_checkpoint:
+    values:
+      - params::/home/dshi/EasyLM/models/open_llama_3b_easylm/open_llama_3b_easylm
+    distribution: categorical
+  optimizer.type:
+    values:
+      - adamw
+    distribution: categorical
+  logger.project:
+    values:
+      - openllama-finetune-code
+    distribution: categorical
+  total_steps:
+    max: 150000
+    min: 50000
+    distribution: int_uniform
