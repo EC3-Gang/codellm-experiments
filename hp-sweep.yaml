@@ -1,4 +1,4 @@
-program: EasyLM.models.llama.llama_train
+program: -m EasyLM.models.llama.llama_train
 method: bayes
 metric:
   goal: minimize
@@ -146,6 +146,5 @@ parameters:
 
 command:
   - /usr/bin/python
-  - -m
   - ${program}
   - ${args}
