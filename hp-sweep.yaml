@@ -40,6 +40,10 @@ parameters:
       - "true"
       - "false"
     distribution: categorical
+  train_dataset.text_processor.fields:
+    values:
+      - 'content'
+    distribution: categorical
   optimizer.adamw_optimizer.clip_gradient:
     max: 2
     min: 1
