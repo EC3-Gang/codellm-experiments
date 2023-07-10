@@ -146,6 +146,6 @@ parameters:
 
 command:
   - /usr/bin/python
-  - "-b"
+  - "-m"
   - ${program}
   - ${args}
