@@ -66,7 +66,7 @@ parameters:
     distribution: uniform
   tokenizer.vocab_file:
     values:
-      - /home/dshi/EasyLM/models/open_llama_3b_easylm/tokenizer.model
+      - /home/dshi/codellm-experiments/models/open_llama_3b_easylm/tokenizer.model
     distribution: categorical
   update_llama_config:
     values:
@@ -111,7 +111,7 @@ parameters:
     distribution: categorical
   load_checkpoint:
     values:
-      - params::/home/dshi/EasyLM/models/open_llama_3b_easylm/open_llama_3b_easylm
+      - params::/home/dshi/codellm-experiments/models/open_llama_3b_easylm/open_llama_3b_easylm
     distribution: categorical
   optimizer.type:
     values:
