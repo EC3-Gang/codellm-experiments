@@ -1,5 +1,5 @@
 program: EasyLM.models.llama.llama_train
-method: bayes
+method: grid
 metric:
   goal: maximise
   name: accuracy
@@ -62,7 +62,7 @@ parameters:
     distribution: uniform
   optimizer.adamw_optimizer.end_lr:
     max: 0.002
-    min: 0.0005
+    min: 0.000005
     distribution: uniform
   tokenizer.vocab_file:
     values:
