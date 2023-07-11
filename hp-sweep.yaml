@@ -1,7 +1,7 @@
 program: EasyLM.models.llama.llama_train
 method: random
 metric:
-  goal: maximise
+  goal: maximize
   name: accuracy
 parameters:
   jax_distributed.initialize_jax_distributed:
